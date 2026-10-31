@@ -1,0 +1,1565 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personal portfolio Revan Valentino Densriano - Business Administration, Digital Creator, Technology and Creative Entrepreneurship."
+    />
+    <meta name="theme-color" content="#09090f" />
+
+    <title>Revan Valentino Densriano — Personal Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* =========================
+   GLOBAL CONFIGURATION
+========================= */
+
+      :root {
+        --bg: #09090f;
+        --surface: #11111b;
+        --surface2: #171724;
+        --purple: #a78bfa;
+        --purple2: #7c3aed;
+        --white: #f5f3ff;
+        --muted: #9694a8;
+        --border: rgba(255, 255, 255, 0.09);
+        --mono: "DM Mono", monospace;
+        --heading: "Space Grotesk", sans-serif;
+        --body: "DM Sans", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--white);
+        font-family: var(--body);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
+        opacity: 0.15;
+        background-image: radial-gradient(#777 0.5px, transparent 0.5px);
+        background-size: 24px 24px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .container {
+        width: min(1120px, 88%);
+        margin: auto;
+      }
+
+      .section {
+        padding: 110px 0;
+      }
+
+      .section-label {
+        font-family: var(--mono);
+        color: var(--purple);
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      .section-heading {
+        font-family: var(--heading);
+        font-size: clamp(32px, 5vw, 48px);
+        line-height: 1.15;
+        margin-top: 14px;
+        letter-spacing: -2px;
+      }
+
+      .section-description {
+        color: var(--muted);
+        max-width: 550px;
+        margin-top: 15px;
+        font-size: 15px;
+      }
+
+      .purple {
+        color: var(--purple);
+      }
+
+      .divider {
+        border: 0;
+        border-top: 1px solid var(--border);
+      }
+
+      /* =========================
+   NAVIGATION
+========================= */
+
+      .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background: rgba(9, 9, 15, 0.85);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        width: 88%;
+        margin: auto;
+        height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: var(--heading);
+        font-size: 21px;
+        font-weight: 700;
+        letter-spacing: -1px;
+      }
+
+      .logo span {
+        color: var(--purple);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+        color: var(--muted);
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--purple);
+      }
+
+      .nav-contact {
+        border: 1px solid var(--purple) !important;
+        color: var(--purple) !important;
+        padding: 9px 17px;
+        border-radius: 5px;
+      }
+
+      .menu-toggle {
+        display: none;
+        color: white;
+        background: none;
+        border: 0;
+        font-size: 25px;
+        cursor: pointer;
+      }
+
+      /* =========================
+   HERO
+========================= */
+
+      .hero {
+        min-height: 780px;
+        display: flex;
+        align-items: center;
+        padding-top: 100px;
+        position: relative;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        right: -100px;
+        top: 150px;
+        background: radial-gradient(
+          circle,
+          rgba(124, 58, 237, 0.15),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+.hero {
+  gap: 60px;
+  justify-content: space-between;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+}
+
+.hero h1 {
+  font-size: clamp(45px, 6.5vw, 76px); /* sedikit dikecilkan supaya muat bersebelahan dengan foto */
+}
+
+.hero-portrait {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-portrait img {
+  display: block;
+  width: 320px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  box-shadow: 0 0 60px rgba(124, 58, 237, 0.25);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .hero-portrait img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+      .hero-content {
+        max-width: 850px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .availability {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        border: 1px solid var(--border);
+        border-radius: 30px;
+        color: #c4b5fd;
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 1px;
+        margin-bottom: 35px;
+        background: rgba(167, 139, 250, 0.05);
+      }
+
+      .status-dot {
+        width: 7px;
+        height: 7px;
+        background: #a78bfa;
+        border-radius: 50%;
+        box-shadow: 0 0 12px #a78bfa;
+      }
+
+      .hero h1 {
+        font-family: var(--heading);
+        font-size: clamp(45px, 8vw, 88px);
+        line-height: 1.04;
+        letter-spacing: -5px;
+        font-weight: 700;
+      }
+
+      .hero h1 span {
+        color: var(--purple);
+      }
+
+      .hero-subtitle {
+        font-family: var(--mono);
+        color: #c4b5fd;
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin-top: 25px;
+      }
+
+      .hero-description {
+        max-width: 610px;
+        color: var(--muted);
+        font-size: 16px;
+        margin-top: 22px;
+        line-height: 1.9;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 35px;
+        flex-wrap: wrap;
+      }
+
+      .button {
+        padding: 13px 23px;
+        background: var(--purple2);
+        border: 1px solid var(--purple2);
+        color: white;
+        border-radius: 5px;
+        font-size: 13px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: 0.3s;
+      }
+
+      .button:hover {
+        background: transparent;
+        border-color: var(--purple);
+        color: var(--purple);
+        transform: translateY(-3px);
+      }
+
+      .button-outline {
+        background: transparent;
+        border-color: var(--border);
+        color: var(--white);
+      }
+
+      .hero-bottom {
+        margin-top: 100px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid var(--border);
+        padding-top: 20px;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
+      /* =========================
+   ABOUT
+========================= */
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 65px;
+        margin-top: 50px;
+      }
+
+      .about-text p {
+        color: var(--muted);
+        font-size: 15px;
+        margin-bottom: 20px;
+        line-height: 2;
+      }
+
+      .about-highlight {
+        background: linear-gradient(145deg, #171329, #11111b);
+        border: 1px solid rgba(167, 139, 250, 0.2);
+        border-radius: 10px;
+        padding: 32px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .about-highlight::after {
+        content: "R";
+        position: absolute;
+        right: -10px;
+        bottom: -90px;
+        font-family: var(--heading);
+        font-size: 220px;
+        color: rgba(167, 139, 250, 0.05);
+        font-weight: 700;
+      }
+
+      .about-highlight h3 {
+        font-family: var(--heading);
+        font-size: 22px;
+        margin-bottom: 15px;
+      }
+
+      .about-highlight p {
+        color: var(--muted);
+        font-size: 14px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .info-row {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        font-size: 12px;
+      }
+
+      .info-row span:first-child {
+        color: var(--muted);
+      }
+
+      .info-row span:last-child {
+        color: var(--purple);
+        text-align: right;
+      }
+
+      /* =========================
+   EDUCATION
+========================= */
+
+      .education-card {
+        margin-top: 40px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        border-radius: 10px;
+        padding: 32px;
+        display: flex;
+        align-items: flex-start;
+        gap: 25px;
+      }
+
+      .education-icon {
+        width: 55px;
+        height: 55px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: rgba(167, 139, 250, 0.12);
+        color: var(--purple);
+        font-size: 25px;
+        flex-shrink: 0;
+      }
+
+      .education-card h3 {
+        font-family: var(--heading);
+        font-size: 21px;
+      }
+
+      .education-card p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 8px;
+      }
+
+      .education-tag {
+        color: var(--purple);
+        font-family: var(--mono);
+        font-size: 10px;
+        margin-top: 12px;
+        display: inline-block;
+      }
+
+      /* =========================
+   EXPERIENCE
+========================= */
+
+      .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 45px;
+      }
+
+      .experience-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 30px;
+        border-radius: 9px;
+        transition: 0.3s;
+      }
+
+      .experience-card:hover {
+        border-color: var(--purple);
+        transform: translateY(-5px);
+        background: #151322;
+      }
+
+      .card-number {
+        color: var(--purple);
+        font-family: var(--mono);
+        font-size: 11px;
+      }
+
+      .experience-card h3 {
+        font-family: var(--heading);
+        font-size: 20px;
+        margin: 18px 0 10px;
+      }
+
+      .experience-card p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      .card-category {
+        display: inline-block;
+        margin-top: 22px;
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        font-family: var(--mono);
+        font-size: 9px;
+        color: #c4b5fd;
+      }
+
+      /* =========================
+   SKILLS
+========================= */
+
+      .skills-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        margin-top: 45px;
+      }
+
+      .skills-column h3 {
+        font-family: var(--heading);
+        font-size: 19px;
+        margin-bottom: 22px;
+      }
+
+      .skill-item {
+        margin-bottom: 20px;
+      }
+
+      .skill-label {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 9px;
+        font-size: 12px;
+      }
+
+      .skill-label span:last-child {
+        color: var(--purple);
+        font-family: var(--mono);
+      }
+
+      .skill-bar {
+        height: 5px;
+        background: #252536;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .skill-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--purple2), var(--purple));
+        border-radius: 10px;
+      }
+
+      /* =========================
+   ACHIEVEMENT
+========================= */
+
+      .achievement {
+        background: linear-gradient(120deg, #1a1230, #11111b);
+        border: 1px solid rgba(167, 139, 250, 0.25);
+        border-radius: 12px;
+        padding: 45px;
+        margin-top: 45px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 35px;
+      }
+
+      .achievement-number {
+        font-family: var(--heading);
+        font-size: clamp(55px, 8vw, 90px);
+        color: var(--purple);
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: -5px;
+      }
+
+      .achievement h3 {
+        font-family: var(--heading);
+        font-size: 25px;
+        margin-bottom: 12px;
+      }
+
+      .achievement p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* =========================
+   PROJECTS
+========================= */
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+        margin-top: 45px;
+      }
+
+      .project-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--purple);
+      }
+
+      .project-card img {
+        width: 100%;
+        height: 290px;
+        object-fit: cover;
+        display: block;
+        background: #171724;
+        transition: 0.5s;
+      }
+
+      .project-card:hover img {
+        transform: scale(1.025);
+      }
+
+      .project-info {
+        padding: 25px;
+      }
+
+      .project-type {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--purple);
+        letter-spacing: 1px;
+      }
+
+      .project-info h3 {
+        font-family: var(--heading);
+        font-size: 21px;
+        margin: 10px 0;
+      }
+
+      .project-info p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      .project-wide {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .project-wide img {
+        height: 100%;
+        min-height: 290px;
+        object-fit: contain;
+        padding: 15px;
+      }
+
+      /* =========================
+   PERSONAL BRANDING
+========================= */
+
+      .branding-box {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        padding: 40px;
+        border-radius: 10px;
+        margin-top: 40px;
+      }
+
+      .branding-box h3 {
+        font-family: var(--heading);
+        font-size: 24px;
+        margin-bottom: 18px;
+      }
+
+      .branding-box p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 2;
+      }
+
+      /* =========================
+   CONTACT
+========================= */
+
+      .contact-box {
+        background: linear-gradient(130deg, #20153a, #10101a);
+        border: 1px solid rgba(167, 139, 250, 0.25);
+        border-radius: 12px;
+        text-align: center;
+        padding: 65px 25px;
+      }
+
+      .contact-box h2 {
+        font-family: var(--heading);
+        font-size: clamp(30px, 5vw, 45px);
+        margin: 15px 0;
+      }
+
+      .contact-box p {
+        color: var(--muted);
+        max-width: 550px;
+        margin: 0 auto 28px;
+        font-size: 14px;
+      }
+
+      /* =========================
+   FOOTER
+========================= */
+
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 30px 0;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 10px;
+      }
+
+      /* =========================
+   ANIMATIONS
+========================= */
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(25px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+.hero-identity {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.hero-photo {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #a78bfa;
+    flex-shrink: 0;
+}
+
+.hero-identity h1 {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .hero-identity {
+        gap: 14px;
+    }
+
+    .hero-photo {
+        width: 68px;
+        height: 68px;
+    }
+}
+
+      /* =========================
+   RESPONSIVE
+========================= */
+
+      @media (max-width: 800px) {
+        .nav-links {
+          gap: 15px;
+        }
+
+        .nav-links a {
+          font-size: 10px;
+        }
+
+        .about-grid,
+        .skills-wrapper {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .hero {
+          min-height: 720px;
+        }
+
+        .hero h1 {
+          letter-spacing: -3px;
+        }
+
+        .achievement {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          width: 90%;
+        }
+
+        .section {
+          padding: 75px 0;
+        }
+
+        .nav-inner {
+          height: 65px;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .nav-links {
+          position: absolute;
+          display: none;
+          top: 65px;
+          left: 0;
+          width: 100%;
+          padding: 25px;
+          background: #10101a;
+          flex-direction: column;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .hero {
+          min-height: 700px;
+        }
+
+        .hero h1 {
+          font-size: 49px;
+          letter-spacing: -3px;
+        }
+
+        .hero-subtitle {
+          font-size: 10px;
+        }
+
+        .hero-description {
+          font-size: 14px;
+        }
+
+        .hero-bottom {
+          flex-direction: column;
+          gap: 12px;
+          margin-top: 65px;
+        }
+
+        .experience-grid,
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .project-wide {
+          grid-column: span 1;
+          grid-template-columns: 1fr;
+        }
+
+        .project-wide img {
+          height: 260px;
+          min-height: 0;
+        }
+
+        .education-card {
+          padding: 22px;
+        }
+
+        .achievement {
+          padding: 30px;
+        }
+
+        .branding-box {
+          padding: 25px;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================
+     NAVBAR
+========================= -->
+
+    <nav class="navbar">
+      <div class="nav-inner">
+        <a href="#home" class="logo"> REVAN<span>.</span> </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Buka navigasi"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#about">ABOUT</a>
+          <a href="#education">EDUCATION</a>
+          <a href="#experience">EXPERIENCE</a>
+          <a href="#skills">SKILLS</a>
+          <a href="#projects">PROJECTS</a>
+          <a href="#contact" class="nav-contact">CONTACT ↗</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =========================
+     HERO
+========================= -->
+
+    <header class="hero container" id="home">
+      <div class="hero-content reveal">
+        <div class="availability">
+          <span class="status-dot"></span>
+          PERSONAL PORTFOLIO / 2026
+        </div>
+
+        <h1>
+          Revan Valentino<br />
+          <span>Densriano.</span>
+        </h1>
+
+        <div class="hero-subtitle">
+          BUSINESS ADMINISTRATION · DIGITAL CREATOR · TECHNOLOGY
+        </div>
+
+        <p class="hero-description">
+          A creative and adaptable individual with interests in business
+          administration, digital media, technology, and entrepreneurship.
+          Combining practical experience with creativity to develop ideas into
+          meaningful work.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="button"> EXPLORE MY WORK ↗ </a>
+
+          <a href="#about" class="button button-outline"> ABOUT ME </a>
+        </div>
+
+        <div class="hero-bottom">
+          <span>BASED IN INDONESIA</span>
+          <span>BUSINESS × CREATIVITY × TECHNOLOGY</span>
+        </div>
+      </div>
+        <div class="hero-portrait reveal">
+    <img src="poto.jpeg" alt="Foto Revan Valentino Densriano" />
+  </div>
+    </header>
+
+    <hr class="divider" />
+
+    <!-- =========================
+     ABOUT
+========================= -->
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">01 — ABOUT ME</div>
+          <h2 class="section-heading">
+            Beyond one <span class="purple">discipline.</span>
+          </h2>
+          <p class="section-description">
+            Mengenal latar belakang, minat, dan perjalanan profesional saya.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              Halo, saya Revan Valentino Densriano, mahasiswa S1 Administrasi
+              Bisnis yang memiliki ketertarikan pada dunia bisnis, teknologi,
+              kreativitas digital, dan pengembangan diri profesional.
+            </p>
+
+            <p>
+              Saya memiliki pengalaman dalam berbagai bidang, mulai dari jasa
+              pengetikan dan pengolahan dokumen, freelance servis komputer
+              software maupun hardware, hingga pengembangan produk elektronik
+              musik berupa efek pedal analog gitar dan bass.
+            </p>
+
+            <p>
+              Selain itu, saya juga menjalankan bisnis kecil merchandise
+              gantungan kunci akrilik serta aktif sebagai content creator
+              YouTube dengan pencapaian 100.000 subscriber.
+            </p>
+
+            <p>
+              Berbagai pengalaman tersebut membentuk saya menjadi pribadi yang
+              kreatif, mandiri, adaptif, dan senang mempelajari hal-hal baru.
+            </p>
+          </div>
+
+          <div class="about-highlight reveal">
+            <h3>My Perspective</h3>
+
+            <p>
+              Saya percaya bahwa kreativitas, teknologi, dan pengetahuan bisnis
+              dapat saling melengkapi untuk menciptakan peluang dan menghasilkan
+              sesuatu yang bernilai.
+            </p>
+
+            <br />
+
+            <div class="info-row">
+              <span>Nama</span>
+              <span>Revan Valentino Densriano</span>
+            </div>
+
+            <div class="info-row">
+              <span>Pendidikan</span>
+              <span>S1 Administrasi Bisnis</span>
+            </div>
+
+            <div class="info-row">
+              <span>Fokus</span>
+              <span>Business & Technology</span>
+            </div>
+
+            <div class="info-row">
+              <span>Personal Brand</span>
+              <span>Creative & Adaptive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- =========================
+     EDUCATION
+========================= -->
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">02 — EDUCATION</div>
+          <h2 class="section-heading">
+            Academic <span class="purple">background.</span>
+          </h2>
+          <p class="section-description">
+            Pendidikan sebagai dasar pengembangan pengetahuan dan kemampuan
+            profesional.
+          </p>
+        </div>
+
+        <div class="education-card reveal">
+          <div class="education-icon">✦</div>
+
+          <div>
+            <h3>S1 Administrasi Bisnis</h3>
+
+            <p>
+              Saat ini sedang menempuh pendidikan S1 Administrasi Bisnis dengan
+              fokus pengembangan pemahaman mengenai administrasi, komunikasi
+              bisnis, pengelolaan organisasi, dan strategi usaha.
+            </p>
+
+            <span class="education-tag"> CURRENTLY STUDYING </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- =========================
+     EXPERIENCE
+========================= -->
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">03 — EXPERIENCE</div>
+          <h2 class="section-heading">
+            Things I've <span class="purple">built.</span>
+          </h2>
+          <p class="section-description">
+            Pengalaman yang saya peroleh melalui pekerjaan, proyek mandiri, dan
+            kegiatan usaha.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <div class="experience-card reveal">
+            <div class="card-number">01 / ADMINISTRATION</div>
+            <h3>Jasa Pengetikan</h3>
+            <p>
+              Menyediakan jasa pengetikan dan pengolahan dokumen menggunakan
+              software perkantoran. Mengembangkan ketelitian, kemampuan
+              administrasi, serta pengelolaan dokumen.
+            </p>
+            <span class="card-category">DOCUMENT MANAGEMENT</span>
+          </div>
+
+          <div class="experience-card reveal">
+            <div class="card-number">02 / TECHNOLOGY</div>
+            <h3>Freelance Computer Service</h3>
+            <p>
+              Menangani layanan perbaikan komputer pada bidang software dan
+              hardware. Mengembangkan kemampuan analisis, troubleshooting, dan
+              pemecahan masalah.
+            </p>
+            <span class="card-category">IT SUPPORT</span>
+          </div>
+
+          <div class="experience-card reveal">
+            <div class="card-number">03 / CREATIVE ENGINEERING</div>
+            <h3>Analog Effects Builder</h3>
+            <p>
+              Membuat dan mengembangkan efek pedal analog untuk gitar dan bass.
+              Menggabungkan keterampilan teknis, kreativitas, dan ketertarikan
+              terhadap musik.
+            </p>
+            <span class="card-category">DIY AUDIO ELECTRONICS</span>
+          </div>
+
+          <div class="experience-card reveal">
+            <div class="card-number">04 / ENTREPRENEURSHIP</div>
+            <h3>Acrylic Merchandise Business</h3>
+            <p>
+              Mengembangkan bisnis kecil merchandise gantungan kunci akrilik.
+              Terlibat dalam pengembangan produk, kreativitas desain, dan
+              pengelolaan usaha.
+            </p>
+            <span class="card-category">SMALL BUSINESS</span>
+          </div>
+
+          <div class="experience-card reveal">
+            <div class="card-number">05 / DIGITAL MEDIA</div>
+            <h3>YouTube Content Creator</h3>
+            <p>
+              Mengembangkan channel YouTube hingga mencapai 100.000 subscriber.
+              Mengasah kreativitas, komunikasi digital, serta pengelolaan konten
+              dan audiens.
+            </p>
+            <span class="card-category">CONTENT CREATION</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- =========================
+     SKILLS
+========================= -->
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">04 — SKILLS</div>
+          <h2 class="section-heading">
+            Skills & <span class="purple">capabilities.</span>
+          </h2>
+          <p class="section-description">
+            Kemampuan yang saya gunakan dan terus kembangkan melalui pengalaman
+            praktis.
+          </p>
+        </div>
+
+        <div class="skills-wrapper">
+          <div class="skills-column reveal">
+            <h3>Business & Management</h3>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Administrasi</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Komunikasi</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Pengelolaan Bisnis</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Software Office</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-column reveal">
+            <h3>Digital & Technology</h3>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Content Creation</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 90%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Computer Troubleshooting</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Creative Product Development</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Digital Communication</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p style="color: var(--muted); font-size: 11px; margin-top: 20px">
+          Catatan: indikator visual merupakan gambaran penguasaan diri dan bukan
+          hasil asesmen sertifikasi.
+        </p>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- =========================
+     ACHIEVEMENT
+========================= -->
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">05 — ACHIEVEMENT</div>
+          <h2 class="section-heading">
+            A milestone in my <span class="purple">journey.</span>
+          </h2>
+        </div>
+
+        <div class="achievement reveal">
+          <div>
+            <div class="achievement-number">100K+</div>
+            <div class="section-label" style="margin-top: 15px">
+              YOUTUBE SUBSCRIBERS
+            </div>
+          </div>
+
+          <div>
+            <h3>Digital Creator Achievement</h3>
+
+            <p>
+              Salah satu pencapaian penting dalam perjalanan saya sebagai
+              content creator adalah mengembangkan channel YouTube hingga
+              mencapai lebih dari 100.000 subscriber.
+            </p>
+
+            <p style="margin-top: 12px">
+              Pengalaman ini menjadi bagian dari proses saya dalam memahami
+              kreativitas digital, konsistensi produksi konten, dan komunikasi
+              dengan audiens.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- =========================
+     PROJECTS
+========================= -->
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">06 — SELECTED WORKS</div>
+          <h2 class="section-heading">
+            My works & <span class="purple">creations.</span>
+          </h2>
+          <p class="section-description">
+            Dokumentasi pencapaian dan karya yang merepresentasikan kreativitas
+            serta kemampuan teknis saya.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <!-- YOUTUBE PLAY BUTTON -->
+
+          <div class="project-card project-wide reveal">
+            <img src="1.jpeg" alt="YouTube Silver Play Button" />
+
+            <div class="project-info">
+              <div class="project-type">DIGITAL ACHIEVEMENT / 01</div>
+
+              <h3>YouTube 100K Subscribers</h3>
+
+              <p>
+                Dokumentasi pencapaian channel YouTube yang telah mencapai
+                100.000 subscriber. Pencapaian ini menjadi representasi
+                perjalanan saya dalam mengembangkan konten digital, membangun
+                audiens, dan mengasah kreativitas.
+              </p>
+            </div>
+          </div>
+
+          <!-- GUITAR PEDAL 1 -->
+
+          <div class="project-card reveal">
+            <img src="2.jpeg" alt="Analog guitar effects project 1" />
+
+            <div class="project-info">
+              <div class="project-type">AUDIO ELECTRONICS / 02</div>
+
+              <h3>Analog Guitar Effects</h3>
+
+              <p>
+                Karya efek pedal analog gitar hasil pengembangan dan perakitan
+                secara mandiri.
+              </p>
+            </div>
+          </div>
+
+          <!-- GUITAR PEDAL 2 -->
+
+          <div class="project-card reveal">
+            <img src="3.jpeg" alt="Analog guitar effects project 2" />
+
+            <div class="project-info">
+              <div class="project-type">DIY AUDIO PROJECT / 03</div>
+
+              <h3>DIY Audio Electronics</h3>
+
+              <p>
+                Eksplorasi kreativitas dalam pengembangan perangkat efek audio
+                untuk gitar dan bass.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- =========================
+     PERSONAL BRANDING
+========================= -->
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">07 — MY DIRECTION</div>
+          <h2 class="section-heading">
+            Building my <span class="purple">future.</span>
+          </h2>
+        </div>
+
+        <div class="branding-box reveal">
+          <h3>My Professional Vision</h3>
+
+          <p>
+            Saya ingin terus mengembangkan diri sebagai individu yang memiliki
+            kemampuan dalam administrasi bisnis, pengelolaan usaha, kreativitas
+            digital, dan teknologi. Saya percaya bahwa pengalaman dari berbagai
+            bidang dapat memberikan sudut pandang yang lebih luas dalam
+            menghadapi tantangan profesional. Melalui e-portofolio ini, saya
+            berupaya membangun personal branding yang merepresentasikan
+            pengalaman, keahlian, pencapaian, dan karya saya secara positif di
+            dunia digital. Ke depannya, saya berharap dapat terus belajar,
+            menciptakan karya, mengembangkan usaha, serta membuka peluang
+            kolaborasi dan karier yang lebih luas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- =========================
+     CONTACT
+========================= -->
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div class="section-label">LET'S CONNECT</div>
+
+          <h2>Open to new <span class="purple">possibilities.</span></h2>
+
+          <p>
+            Terbuka untuk peluang kolaborasi, pengembangan bisnis, pertukaran
+            ide, dan kesempatan profesional.
+          </p>
+
+          <!-- GANTI EMAIL DI BAWAH -->
+
+          <a href="mailto:reresigma@protonmail.com" class="button">
+            GET IN TOUCH ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer>
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> REVAN VALENTINO DENSRIANO</div>
+
+        <div>PERSONAL PORTFOLIO · INDONESIA</div>
+      </div>
+    </footer>
+
+    <!-- =========================
+     JAVASCRIPT
+========================= -->
+
+    <script>
+      // Automatic year
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Mobile navigation
+
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("active");
+
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+      });
+
+      // Close mobile menu after click
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.textContent = "☰";
+        });
+      });
+
+      // Scroll reveal animation
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+        },
+      );
+
+      document.querySelectorAll(".reveal").forEach((element) => {
+        observer.observe(element);
+      });
+    </script>
+  </body>
+</html>
